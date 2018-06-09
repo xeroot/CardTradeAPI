@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CardTradeModelStoreContainer" CdmEntityContainer="CardTradeEntities">
+    <EntitySetMapping Name="Auctions">
+      <EntityTypeMapping TypeName="CardTradeModel.Auction">
+        <MappingFragment StoreEntitySet="Auction">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idCard" ColumnName="idCard" />
+          <ScalarProperty Name="idUserSeller" ColumnName="idUserSeller" />
+          <ScalarProperty Name="beginDate" ColumnName="beginDate" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="currentAmount" ColumnName="currentAmount" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="idCurrentUser" ColumnName="idCurrentUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cards">
+      <EntityTypeMapping TypeName="CardTradeModel.Card">
+        <MappingFragment StoreEntitySet="Card">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="minValue" ColumnName="minValue" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="manaCost" ColumnName="manaCost" />
+          <ScalarProperty Name="power" ColumnName="power" />
+          <ScalarProperty Name="toughness" ColumnName="toughness" />
+          <ScalarProperty Name="isFoil" ColumnName="isFoil" />
+          <ScalarProperty Name="idRarity" ColumnName="idRarity" />
+          <ScalarProperty Name="idCategory" ColumnName="idCategory" />
+          <ScalarProperty Name="idSupertype" ColumnName="idSupertype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="CardTradeModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Colors">
+      <EntityTypeMapping TypeName="CardTradeModel.Color">
+        <MappingFragment StoreEntitySet="Color">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mechanics">
+      <EntityTypeMapping TypeName="CardTradeModel.Mechanic">
+        <MappingFragment StoreEntitySet="Mechanics">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notifications">
+      <EntityTypeMapping TypeName="CardTradeModel.Notification">
+        <MappingFragment StoreEntitySet="Notification">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idAuction" ColumnName="idAuction" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="CardTradeModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="isReviced" ColumnName="isReviced" />
+          <ScalarProperty Name="dateRecived" ColumnName="dateRecived" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="idAuction" ColumnName="idAuction" />
+          <ScalarProperty Name="beginDate" ColumnName="beginDate" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+          <ScalarProperty Name="shippingMethod" ColumnName="shippingMethod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profiles">
+      <EntityTypeMapping TypeName="CardTradeModel.Profile">
+        <MappingFragment StoreEntitySet="Profile">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="coins" ColumnName="coins" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="R_Auction_CurrentUsers">
+      <EntityTypeMapping TypeName="CardTradeModel.R_Auction_CurrentUsers">
+        <MappingFragment StoreEntitySet="R_Auction-CurrentUsers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idCurrentUser" ColumnName="idCurrentUser" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="idAuction" ColumnName="idAuction" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="R_Card_Color">
+      <EntityTypeMapping TypeName="CardTradeModel.R_Card_Color">
+        <MappingFragment StoreEntitySet="R_Card-Color">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idCard" ColumnName="idCard" />
+          <ScalarProperty Name="idColor" ColumnName="idColor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="R_Card_Mechanic">
+      <EntityTypeMapping TypeName="CardTradeModel.R_Card_Mechanic">
+        <MappingFragment StoreEntitySet="R_Card-Mechanic">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idCard" ColumnName="idCard" />
+          <ScalarProperty Name="idMechanic" ColumnName="idMechanic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rarities">
+      <EntityTypeMapping TypeName="CardTradeModel.Rarity">
+        <MappingFragment StoreEntitySet="Rarity">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reports">
+      <EntityTypeMapping TypeName="CardTradeModel.Report">
+        <MappingFragment StoreEntitySet="Report">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="route" ColumnName="route" />
+          <ScalarProperty Name="idReportType" ColumnName="idReportType" />
+          <ScalarProperty Name="idAuction" ColumnName="idAuction" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportTypes">
+      <EntityTypeMapping TypeName="CardTradeModel.ReportType">
+        <MappingFragment StoreEntitySet="ReportType">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rules">
+      <EntityTypeMapping TypeName="CardTradeModel.Rule">
+        <MappingFragment StoreEntitySet="Rules">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Supertypes">
+      <EntityTypeMapping TypeName="CardTradeModel.Supertype">
+        <MappingFragment StoreEntitySet="Supertype">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transactions">
+      <EntityTypeMapping TypeName="CardTradeModel.Transaction">
+        <MappingFragment StoreEntitySet="Transaction">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="moneyAmount" ColumnName="moneyAmount" />
+          <ScalarProperty Name="coinsAmount" ColumnName="coinsAmount" />
+          <ScalarProperty Name="transactionDate" ColumnName="transactionDate" />
+          <ScalarProperty Name="transactionType" ColumnName="transactionType" />
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="CardTradeModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

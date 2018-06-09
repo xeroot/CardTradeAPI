@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="128cb906d27540b2939e18e1d78d34d0" Name="Diagram1">
+        <EntityTypeShape EntityType="CardTradeModel.Auction" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardTradeModel.Card" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardTradeModel.Category" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardTradeModel.Color" Width="1.5" PointX="0.75" PointY="30.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardTradeModel.Mechanic" Width="1.5" PointX="1.75" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardTradeModel.Notification" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardTradeModel.Order" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardTradeModel.Profile" Width="1.5" PointX="3" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardTradeModel.R_Auction_CurrentUsers" Width="1.5" PointX="8.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardTradeModel.R_Card_Color" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardTradeModel.R_Card_Mechanic" Width="1.5" PointX="4" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardTradeModel.Rarity" Width="1.5" PointX="1.5" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardTradeModel.Report" Width="1.5" PointX="8.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardTradeModel.ReportType" Width="1.5" PointX="6" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardTradeModel.Rule" Width="1.5" PointX="6.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardTradeModel.Supertype" Width="1.5" PointX="1.5" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardTradeModel.Transaction" Width="1.5" PointX="3" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardTradeModel.User" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+        <AssociationConnector Association="CardTradeModel.FK_Auction_Card" ManuallyRouted="false" />
+        <AssociationConnector Association="CardTradeModel.FK_Auction_User" ManuallyRouted="false" />
+        <AssociationConnector Association="CardTradeModel.FK_Auction_UserSeller" ManuallyRouted="false" />
+        <AssociationConnector Association="CardTradeModel.FK_Notification_Auction" ManuallyRouted="false" />
+        <AssociationConnector Association="CardTradeModel.FK_Order_Auction" ManuallyRouted="false" />
+        <AssociationConnector Association="CardTradeModel.FK_R_Auction_CurrentUsers_Auction" ManuallyRouted="false" />
+        <AssociationConnector Association="CardTradeModel.FK_Report_Auction" ManuallyRouted="false" />
+        <AssociationConnector Association="CardTradeModel.FK_Card_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="CardTradeModel.FK_Card_Rarity" ManuallyRouted="false" />
+        <AssociationConnector Association="CardTradeModel.FK_Card_Supertype" ManuallyRouted="false" />
+        <AssociationConnector Association="CardTradeModel.FK_R_Card_Color_Card" ManuallyRouted="false" />
+        <AssociationConnector Association="CardTradeModel.FK_R_Card_Mechanic_Card" ManuallyRouted="false" />
+        <AssociationConnector Association="CardTradeModel.FK_R_Card_Color_Color" ManuallyRouted="false" />
+        <AssociationConnector Association="CardTradeModel.FK_R_Card_Mechanic_Mechanics" ManuallyRouted="false" />
+        <AssociationConnector Association="CardTradeModel.FK_Profile_User" ManuallyRouted="false" />
+        <AssociationConnector Association="CardTradeModel.FK_R_Auction_CurrentUsers_User" ManuallyRouted="false" />
+        <AssociationConnector Association="CardTradeModel.FK_Report_ReportType" ManuallyRouted="false" />
+        <AssociationConnector Association="CardTradeModel.FK_Transaction_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

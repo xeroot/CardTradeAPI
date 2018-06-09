@@ -1,0 +1,103 @@
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\ApplicationInsights.config
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\CardTrade.dll.config
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\CardTrade.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\CardTrade.pdb
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\Antlr3.Runtime.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\EntityFramework.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\EntityFramework.SqlServer.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\Microsoft.AI.Web.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\Microsoft.ApplicationInsights.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\Newtonsoft.Json.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\System.Net.Http.Formatting.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\System.Web.Helpers.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\System.Web.Http.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\System.Web.Http.WebHost.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\System.Web.Mvc.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\System.Web.Optimization.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\System.Web.Razor.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\System.Web.WebPages.Deployment.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\System.Web.WebPages.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\System.Web.WebPages.Razor.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\WebGrease.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\EntityFramework.xml
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\EntityFramework.SqlServer.xml
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\Newtonsoft.Json.xml
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\System.Net.Http.Formatting.xml
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\System.Web.Helpers.xml
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\System.Web.Http.xml
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\System.Web.Http.WebHost.xml
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\System.Web.Mvc.xml
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\System.Web.Optimization.xml
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\System.Web.Razor.xml
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\System.Web.WebPages.xml
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\System.Web.WebPages.Deployment.xml
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\System.Web.WebPages.Razor.xml
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\Antlr3.Runtime.pdb
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\Microsoft.ApplicationInsights.xml
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\bin\Microsoft.AI.Web.xml
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\obj\Debug\CardTrade.csprojResolveAssemblyReference.cache
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\obj\Debug\CardTrade.csproj.CoreCompileInputs.cache
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\obj\Debug\CardTrade.dll
+C:\Users\gabo\Desktop\UPC\Public\UPC 8vo Ciclo\Moviles\CardTrade\CardTrade\obj\Debug\CardTrade.pdb
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\ApplicationInsights.config
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\CardTrade.dll.config
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\CardTrade.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\CardTrade.pdb
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\Antlr3.Runtime.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\EntityFramework.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\EntityFramework.SqlServer.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\Microsoft.AI.DependencyCollector.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\Microsoft.AI.Web.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\Microsoft.AI.WindowsServer.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\Microsoft.ApplicationInsights.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\Microsoft.Web.Infrastructure.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\Newtonsoft.Json.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\System.Net.Http.Formatting.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\System.Web.Helpers.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\System.Web.Http.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\System.Web.Http.WebHost.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\System.Web.Mvc.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\System.Web.Optimization.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\System.Web.Razor.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\System.Web.WebPages.Deployment.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\System.Web.WebPages.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\System.Web.WebPages.Razor.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\WebGrease.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\EntityFramework.xml
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\EntityFramework.SqlServer.xml
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\Newtonsoft.Json.xml
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\System.Net.Http.Formatting.xml
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\System.Web.Helpers.xml
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\System.Web.Http.xml
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\System.Web.Http.WebHost.xml
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\System.Web.Mvc.xml
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\System.Web.Optimization.xml
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\System.Web.Razor.xml
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\System.Web.WebPages.xml
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\System.Web.WebPages.Deployment.xml
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\System.Web.WebPages.Razor.xml
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\Antlr3.Runtime.pdb
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\Microsoft.ApplicationInsights.xml
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\Microsoft.AI.DependencyCollector.xml
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\Microsoft.AI.WindowsServer.xml
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\bin\Microsoft.AI.Web.xml
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\obj\Debug\CardTrade.dll
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\obj\Debug\CardTrade.pdb
+D:\Biblioteca\Downloads\CardTrade\CardTrade\CardTrade\obj\Debug\CardTrade.csprojResolveAssemblyReference.cache

@@ -1,0 +1,1237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CardTradeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Auction">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idCard" Type="int" Nullable="false" />
+          <Property Name="idUserSeller" Type="int" Nullable="false" />
+          <Property Name="beginDate" Type="datetime" Nullable="false" />
+          <Property Name="endDate" Type="datetime" Nullable="false" />
+          <Property Name="status" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="type" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="currentAmount" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="amount" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="idCurrentUser" Type="int" />
+        </EntityType>
+        <EntityType Name="Card">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="cost" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="minValue" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="status" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="manaCost" Type="int" Nullable="false" />
+          <Property Name="power" Type="int" />
+          <Property Name="toughness" Type="int" />
+          <Property Name="isFoil" Type="bit" Nullable="false" />
+          <Property Name="idRarity" Type="int" Nullable="false" />
+          <Property Name="idCategory" Type="int" Nullable="false" />
+          <Property Name="idSupertype" Type="int" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Color">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Mechanics">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Notification">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idAuction" Type="int" Nullable="false" />
+          <Property Name="Reason" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="isReviced" Type="bit" Nullable="false" />
+          <Property Name="dateRecived" Type="datetime" />
+          <Property Name="status" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="idAuction" Type="int" Nullable="false" />
+          <Property Name="beginDate" Type="datetime" Nullable="false" />
+          <Property Name="endDate" Type="datetime" Nullable="false" />
+          <Property Name="shippingMethod" Type="nvarchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Profile">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="phone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="age" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="sex" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="coins" Type="int" Nullable="false" />
+          <Property Name="rating" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="address" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="idUser" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="R_Auction-CurrentUsers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idCurrentUser" Type="int" Nullable="false" />
+          <Property Name="amount" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="idAuction" Type="int" />
+        </EntityType>
+        <EntityType Name="R_Card-Color">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idCard" Type="int" Nullable="false" />
+          <Property Name="idColor" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="R_Card-Mechanic">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idCard" Type="int" Nullable="false" />
+          <Property Name="idMechanic" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rarity">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Report">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="350" Nullable="false" />
+          <Property Name="route" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="idReportType" Type="int" Nullable="false" />
+          <Property Name="idAuction" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReportType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rules">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="type" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Supertype">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="moneyAmount" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="coinsAmount" Type="int" Nullable="false" />
+          <Property Name="transactionDate" Type="datetime" Nullable="false" />
+          <Property Name="transactionType" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="idUser" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="pass" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Auction_Card">
+          <End Role="Card" Type="Self.Card" Multiplicity="1" />
+          <End Role="Auction" Type="Self.Auction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Card">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Auction">
+              <PropertyRef Name="idCard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Auction_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Auction" Type="Self.Auction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Auction">
+              <PropertyRef Name="idCurrentUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Auction_UserSeller">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Auction" Type="Self.Auction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Auction">
+              <PropertyRef Name="idUserSeller" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Card_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Card" Type="Self.Card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Card">
+              <PropertyRef Name="idCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Card_Rarity">
+          <End Role="Rarity" Type="Self.Rarity" Multiplicity="1" />
+          <End Role="Card" Type="Self.Card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rarity">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Card">
+              <PropertyRef Name="idRarity" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Card_Supertype">
+          <End Role="Supertype" Type="Self.Supertype" Multiplicity="0..1" />
+          <End Role="Card" Type="Self.Card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supertype">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Card">
+              <PropertyRef Name="idSupertype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Notification_Auction">
+          <End Role="Auction" Type="Self.Auction" Multiplicity="1" />
+          <End Role="Notification" Type="Self.Notification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Auction">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Notification">
+              <PropertyRef Name="idAuction" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Auction">
+          <End Role="Auction" Type="Self.Auction" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Auction">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="idAuction" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Profile_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Profile" Type="Self.Profile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Profile">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_R_Auction-CurrentUsers_Auction">
+          <End Role="Auction" Type="Self.Auction" Multiplicity="0..1" />
+          <End Role="R_Auction-CurrentUsers" Type="Self.R_Auction-CurrentUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Auction">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="R_Auction-CurrentUsers">
+              <PropertyRef Name="idAuction" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_R_Auction-CurrentUsers_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="R_Auction-CurrentUsers" Type="Self.R_Auction-CurrentUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="R_Auction-CurrentUsers">
+              <PropertyRef Name="idCurrentUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_R_Card-Color_Card">
+          <End Role="Card" Type="Self.Card" Multiplicity="1" />
+          <End Role="R_Card-Color" Type="Self.R_Card-Color" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Card">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="R_Card-Color">
+              <PropertyRef Name="idCard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_R_Card-Color_Color">
+          <End Role="Color" Type="Self.Color" Multiplicity="1" />
+          <End Role="R_Card-Color" Type="Self.R_Card-Color" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Color">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="R_Card-Color">
+              <PropertyRef Name="idColor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_R_Card-Mechanic_Card">
+          <End Role="Card" Type="Self.Card" Multiplicity="1" />
+          <End Role="R_Card-Mechanic" Type="Self.R_Card-Mechanic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Card">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="R_Card-Mechanic">
+              <PropertyRef Name="idCard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_R_Card-Mechanic_Mechanics">
+          <End Role="Mechanics" Type="Self.Mechanics" Multiplicity="1" />
+          <End Role="R_Card-Mechanic" Type="Self.R_Card-Mechanic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mechanics">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="R_Card-Mechanic">
+              <PropertyRef Name="idMechanic" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Report_Auction">
+          <End Role="Auction" Type="Self.Auction" Multiplicity="1" />
+          <End Role="Report" Type="Self.Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Auction">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Report">
+              <PropertyRef Name="idAuction" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Report_ReportType">
+          <End Role="ReportType" Type="Self.ReportType" Multiplicity="1" />
+          <End Role="Report" Type="Self.Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReportType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Report">
+              <PropertyRef Name="idReportType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transaction_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Transaction" Type="Self.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CardTradeModelStoreContainer">
+          <EntitySet Name="Auction" EntityType="Self.Auction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Card" EntityType="Self.Card" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Color" EntityType="Self.Color" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mechanics" EntityType="Self.Mechanics" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Notification" EntityType="Self.Notification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Profile" EntityType="Self.Profile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="R_Auction-CurrentUsers" EntityType="Self.R_Auction-CurrentUsers" Schema="dbo" Table="R.Auction-CurrentUsers" store:Type="Tables" />
+          <EntitySet Name="R_Card-Color" EntityType="Self.R_Card-Color" Schema="dbo" Table="R.Card-Color" store:Type="Tables" />
+          <EntitySet Name="R_Card-Mechanic" EntityType="Self.R_Card-Mechanic" Schema="dbo" Table="R.Card-Mechanic" store:Type="Tables" />
+          <EntitySet Name="Rarity" EntityType="Self.Rarity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Report" EntityType="Self.Report" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReportType" EntityType="Self.ReportType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rules" EntityType="Self.Rules" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Supertype" EntityType="Self.Supertype" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transaction" EntityType="Self.Transaction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Auction_Card" Association="Self.FK_Auction_Card">
+            <End Role="Card" EntitySet="Card" />
+            <End Role="Auction" EntitySet="Auction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Auction_User" Association="Self.FK_Auction_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Auction" EntitySet="Auction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Auction_UserSeller" Association="Self.FK_Auction_UserSeller">
+            <End Role="User" EntitySet="User" />
+            <End Role="Auction" EntitySet="Auction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_Category" Association="Self.FK_Card_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Card" EntitySet="Card" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_Rarity" Association="Self.FK_Card_Rarity">
+            <End Role="Rarity" EntitySet="Rarity" />
+            <End Role="Card" EntitySet="Card" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_Supertype" Association="Self.FK_Card_Supertype">
+            <End Role="Supertype" EntitySet="Supertype" />
+            <End Role="Card" EntitySet="Card" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notification_Auction" Association="Self.FK_Notification_Auction">
+            <End Role="Auction" EntitySet="Auction" />
+            <End Role="Notification" EntitySet="Notification" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Auction" Association="Self.FK_Order_Auction">
+            <End Role="Auction" EntitySet="Auction" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Profile_User" Association="Self.FK_Profile_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Profile" EntitySet="Profile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_R_Auction-CurrentUsers_Auction" Association="Self.FK_R_Auction-CurrentUsers_Auction">
+            <End Role="Auction" EntitySet="Auction" />
+            <End Role="R_Auction-CurrentUsers" EntitySet="R_Auction-CurrentUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_R_Auction-CurrentUsers_User" Association="Self.FK_R_Auction-CurrentUsers_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="R_Auction-CurrentUsers" EntitySet="R_Auction-CurrentUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_R_Card-Color_Card" Association="Self.FK_R_Card-Color_Card">
+            <End Role="Card" EntitySet="Card" />
+            <End Role="R_Card-Color" EntitySet="R_Card-Color" />
+          </AssociationSet>
+          <AssociationSet Name="FK_R_Card-Color_Color" Association="Self.FK_R_Card-Color_Color">
+            <End Role="Color" EntitySet="Color" />
+            <End Role="R_Card-Color" EntitySet="R_Card-Color" />
+          </AssociationSet>
+          <AssociationSet Name="FK_R_Card-Mechanic_Card" Association="Self.FK_R_Card-Mechanic_Card">
+            <End Role="Card" EntitySet="Card" />
+            <End Role="R_Card-Mechanic" EntitySet="R_Card-Mechanic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_R_Card-Mechanic_Mechanics" Association="Self.FK_R_Card-Mechanic_Mechanics">
+            <End Role="Mechanics" EntitySet="Mechanics" />
+            <End Role="R_Card-Mechanic" EntitySet="R_Card-Mechanic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Report_Auction" Association="Self.FK_Report_Auction">
+            <End Role="Auction" EntitySet="Auction" />
+            <End Role="Report" EntitySet="Report" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Report_ReportType" Association="Self.FK_Report_ReportType">
+            <End Role="ReportType" EntitySet="ReportType" />
+            <End Role="Report" EntitySet="Report" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transaction_User" Association="Self.FK_Transaction_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Transaction" EntitySet="Transaction" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CardTradeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Auction">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idCard" Type="Int32" Nullable="false" />
+          <Property Name="idUserSeller" Type="Int32" Nullable="false" />
+          <Property Name="beginDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="endDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="currentAmount" Type="Decimal" Precision="7" Scale="2" />
+          <Property Name="amount" Type="Decimal" Precision="7" Scale="2" />
+          <Property Name="idCurrentUser" Type="Int32" />
+          <NavigationProperty Name="Card" Relationship="Self.FK_Auction_Card" FromRole="Auction" ToRole="Card" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Auction_User" FromRole="Auction" ToRole="User" />
+          <NavigationProperty Name="User1" Relationship="Self.FK_Auction_UserSeller" FromRole="Auction" ToRole="User" />
+          <NavigationProperty Name="Notifications" Relationship="Self.FK_Notification_Auction" FromRole="Auction" ToRole="Notification" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Order_Auction" FromRole="Auction" ToRole="Order" />
+          <NavigationProperty Name="R_Auction_CurrentUsers" Relationship="Self.FK_R_Auction_CurrentUsers_Auction" FromRole="Auction" ToRole="R_Auction_CurrentUsers" />
+          <NavigationProperty Name="Reports" Relationship="Self.FK_Report_Auction" FromRole="Auction" ToRole="Report" />
+        </EntityType>
+        <EntityType Name="Card">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cost" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="minValue" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="manaCost" Type="Int32" Nullable="false" />
+          <Property Name="power" Type="Int32" />
+          <Property Name="toughness" Type="Int32" />
+          <Property Name="isFoil" Type="Boolean" Nullable="false" />
+          <Property Name="idRarity" Type="Int32" Nullable="false" />
+          <Property Name="idCategory" Type="Int32" Nullable="false" />
+          <Property Name="idSupertype" Type="Int32" />
+          <NavigationProperty Name="Auctions" Relationship="Self.FK_Auction_Card" FromRole="Card" ToRole="Auction" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_Card_Category" FromRole="Card" ToRole="Category" />
+          <NavigationProperty Name="Rarity" Relationship="Self.FK_Card_Rarity" FromRole="Card" ToRole="Rarity" />
+          <NavigationProperty Name="Supertype" Relationship="Self.FK_Card_Supertype" FromRole="Card" ToRole="Supertype" />
+          <NavigationProperty Name="R_Card_Color" Relationship="Self.FK_R_Card_Color_Card" FromRole="Card" ToRole="R_Card_Color" />
+          <NavigationProperty Name="R_Card_Mechanic" Relationship="Self.FK_R_Card_Mechanic_Card" FromRole="Card" ToRole="R_Card_Mechanic" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Cards" Relationship="Self.FK_Card_Category" FromRole="Category" ToRole="Card" />
+        </EntityType>
+        <EntityType Name="Color">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="R_Card_Color" Relationship="Self.FK_R_Card_Color_Color" FromRole="Color" ToRole="R_Card_Color" />
+        </EntityType>
+        <EntityType Name="Mechanic">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="R_Card_Mechanic" Relationship="Self.FK_R_Card_Mechanic_Mechanics" FromRole="Mechanics" ToRole="R_Card_Mechanic" />
+        </EntityType>
+        <EntityType Name="Notification">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idAuction" Type="Int32" Nullable="false" />
+          <Property Name="Reason" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Auction" Relationship="Self.FK_Notification_Auction" FromRole="Notification" ToRole="Auction" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="isReviced" Type="Boolean" Nullable="false" />
+          <Property Name="dateRecived" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="idAuction" Type="Int32" Nullable="false" />
+          <Property Name="beginDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="endDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="shippingMethod" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Auction" Relationship="Self.FK_Order_Auction" FromRole="Order" ToRole="Auction" />
+        </EntityType>
+        <EntityType Name="Profile">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="age" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sex" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="coins" Type="Int32" Nullable="false" />
+          <Property Name="rating" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idUser" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Profile_User" FromRole="Profile" ToRole="User" />
+        </EntityType>
+        <EntityType Name="R_Auction_CurrentUsers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idCurrentUser" Type="Int32" Nullable="false" />
+          <Property Name="amount" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="idAuction" Type="Int32" />
+          <NavigationProperty Name="Auction" Relationship="Self.FK_R_Auction_CurrentUsers_Auction" FromRole="R_Auction_CurrentUsers" ToRole="Auction" />
+          <NavigationProperty Name="User" Relationship="Self.FK_R_Auction_CurrentUsers_User" FromRole="R_Auction_CurrentUsers" ToRole="User" />
+        </EntityType>
+        <EntityType Name="R_Card_Color">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idCard" Type="Int32" Nullable="false" />
+          <Property Name="idColor" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Card" Relationship="Self.FK_R_Card_Color_Card" FromRole="R_Card_Color" ToRole="Card" />
+          <NavigationProperty Name="Color" Relationship="Self.FK_R_Card_Color_Color" FromRole="R_Card_Color" ToRole="Color" />
+        </EntityType>
+        <EntityType Name="R_Card_Mechanic">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idCard" Type="Int32" Nullable="false" />
+          <Property Name="idMechanic" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Card" Relationship="Self.FK_R_Card_Mechanic_Card" FromRole="R_Card_Mechanic" ToRole="Card" />
+          <NavigationProperty Name="Mechanic" Relationship="Self.FK_R_Card_Mechanic_Mechanics" FromRole="R_Card_Mechanic" ToRole="Mechanics" />
+        </EntityType>
+        <EntityType Name="Rarity">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="description" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Cards" Relationship="Self.FK_Card_Rarity" FromRole="Rarity" ToRole="Card" />
+        </EntityType>
+        <EntityType Name="Report">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="description" Type="String" MaxLength="350" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="route" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="idReportType" Type="Int32" Nullable="false" />
+          <Property Name="idAuction" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Auction" Relationship="Self.FK_Report_Auction" FromRole="Report" ToRole="Auction" />
+          <NavigationProperty Name="ReportType" Relationship="Self.FK_Report_ReportType" FromRole="Report" ToRole="ReportType" />
+        </EntityType>
+        <EntityType Name="ReportType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Reports" Relationship="Self.FK_Report_ReportType" FromRole="ReportType" ToRole="Report" />
+        </EntityType>
+        <EntityType Name="Rule">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Supertype">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Cards" Relationship="Self.FK_Card_Supertype" FromRole="Supertype" ToRole="Card" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="moneyAmount" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="coinsAmount" Type="Int32" Nullable="false" />
+          <Property Name="transactionDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="transactionType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="idUser" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Transaction_User" FromRole="Transaction" ToRole="User" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="pass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Auctions" Relationship="Self.FK_Auction_User" FromRole="User" ToRole="Auction" />
+          <NavigationProperty Name="Auctions1" Relationship="Self.FK_Auction_UserSeller" FromRole="User" ToRole="Auction" />
+          <NavigationProperty Name="Profiles" Relationship="Self.FK_Profile_User" FromRole="User" ToRole="Profile" />
+          <NavigationProperty Name="R_Auction_CurrentUsers" Relationship="Self.FK_R_Auction_CurrentUsers_User" FromRole="User" ToRole="R_Auction_CurrentUsers" />
+          <NavigationProperty Name="Transactions" Relationship="Self.FK_Transaction_User" FromRole="User" ToRole="Transaction" />
+        </EntityType>
+        <Association Name="FK_Auction_Card">
+          <End Role="Card" Type="Self.Card" Multiplicity="1" />
+          <End Role="Auction" Type="Self.Auction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Card">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Auction">
+              <PropertyRef Name="idCard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Auction_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Auction" Type="Self.Auction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Auction">
+              <PropertyRef Name="idCurrentUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Auction_UserSeller">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Auction" Type="Self.Auction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Auction">
+              <PropertyRef Name="idUserSeller" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Notification_Auction">
+          <End Role="Auction" Type="Self.Auction" Multiplicity="1" />
+          <End Role="Notification" Type="Self.Notification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Auction">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Notification">
+              <PropertyRef Name="idAuction" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Auction">
+          <End Role="Auction" Type="Self.Auction" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Auction">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="idAuction" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_R_Auction_CurrentUsers_Auction">
+          <End Role="Auction" Type="Self.Auction" Multiplicity="0..1" />
+          <End Role="R_Auction_CurrentUsers" Type="Self.R_Auction_CurrentUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Auction">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="R_Auction_CurrentUsers">
+              <PropertyRef Name="idAuction" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Report_Auction">
+          <End Role="Auction" Type="Self.Auction" Multiplicity="1" />
+          <End Role="Report" Type="Self.Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Auction">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Report">
+              <PropertyRef Name="idAuction" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Card_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Card" Type="Self.Card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Card">
+              <PropertyRef Name="idCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Card_Rarity">
+          <End Role="Rarity" Type="Self.Rarity" Multiplicity="1" />
+          <End Role="Card" Type="Self.Card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rarity">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Card">
+              <PropertyRef Name="idRarity" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Card_Supertype">
+          <End Role="Supertype" Type="Self.Supertype" Multiplicity="0..1" />
+          <End Role="Card" Type="Self.Card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supertype">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Card">
+              <PropertyRef Name="idSupertype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_R_Card_Color_Card">
+          <End Role="Card" Type="Self.Card" Multiplicity="1" />
+          <End Role="R_Card_Color" Type="Self.R_Card_Color" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Card">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="R_Card_Color">
+              <PropertyRef Name="idCard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_R_Card_Mechanic_Card">
+          <End Role="Card" Type="Self.Card" Multiplicity="1" />
+          <End Role="R_Card_Mechanic" Type="Self.R_Card_Mechanic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Card">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="R_Card_Mechanic">
+              <PropertyRef Name="idCard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_R_Card_Color_Color">
+          <End Role="Color" Type="Self.Color" Multiplicity="1" />
+          <End Role="R_Card_Color" Type="Self.R_Card_Color" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Color">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="R_Card_Color">
+              <PropertyRef Name="idColor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_R_Card_Mechanic_Mechanics">
+          <End Role="Mechanics" Type="Self.Mechanic" Multiplicity="1" />
+          <End Role="R_Card_Mechanic" Type="Self.R_Card_Mechanic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mechanics">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="R_Card_Mechanic">
+              <PropertyRef Name="idMechanic" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Profile_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Profile" Type="Self.Profile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Profile">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_R_Auction_CurrentUsers_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="R_Auction_CurrentUsers" Type="Self.R_Auction_CurrentUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="R_Auction_CurrentUsers">
+              <PropertyRef Name="idCurrentUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Report_ReportType">
+          <End Role="ReportType" Type="Self.ReportType" Multiplicity="1" />
+          <End Role="Report" Type="Self.Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReportType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Report">
+              <PropertyRef Name="idReportType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transaction_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Transaction" Type="Self.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CardTradeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Auctions" EntityType="Self.Auction" />
+          <EntitySet Name="Cards" EntityType="Self.Card" />
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="Colors" EntityType="Self.Color" />
+          <EntitySet Name="Mechanics" EntityType="Self.Mechanic" />
+          <EntitySet Name="Notifications" EntityType="Self.Notification" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="Profiles" EntityType="Self.Profile" />
+          <EntitySet Name="R_Auction_CurrentUsers" EntityType="Self.R_Auction_CurrentUsers" />
+          <EntitySet Name="R_Card_Color" EntityType="Self.R_Card_Color" />
+          <EntitySet Name="R_Card_Mechanic" EntityType="Self.R_Card_Mechanic" />
+          <EntitySet Name="Rarities" EntityType="Self.Rarity" />
+          <EntitySet Name="Reports" EntityType="Self.Report" />
+          <EntitySet Name="ReportTypes" EntityType="Self.ReportType" />
+          <EntitySet Name="Rules" EntityType="Self.Rule" />
+          <EntitySet Name="Supertypes" EntityType="Self.Supertype" />
+          <EntitySet Name="Transactions" EntityType="Self.Transaction" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK_Auction_Card" Association="Self.FK_Auction_Card">
+            <End Role="Card" EntitySet="Cards" />
+            <End Role="Auction" EntitySet="Auctions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Auction_User" Association="Self.FK_Auction_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Auction" EntitySet="Auctions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Auction_UserSeller" Association="Self.FK_Auction_UserSeller">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Auction" EntitySet="Auctions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notification_Auction" Association="Self.FK_Notification_Auction">
+            <End Role="Auction" EntitySet="Auctions" />
+            <End Role="Notification" EntitySet="Notifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Auction" Association="Self.FK_Order_Auction">
+            <End Role="Auction" EntitySet="Auctions" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_R_Auction_CurrentUsers_Auction" Association="Self.FK_R_Auction_CurrentUsers_Auction">
+            <End Role="Auction" EntitySet="Auctions" />
+            <End Role="R_Auction_CurrentUsers" EntitySet="R_Auction_CurrentUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Report_Auction" Association="Self.FK_Report_Auction">
+            <End Role="Auction" EntitySet="Auctions" />
+            <End Role="Report" EntitySet="Reports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_Category" Association="Self.FK_Card_Category">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Card" EntitySet="Cards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_Rarity" Association="Self.FK_Card_Rarity">
+            <End Role="Rarity" EntitySet="Rarities" />
+            <End Role="Card" EntitySet="Cards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_Supertype" Association="Self.FK_Card_Supertype">
+            <End Role="Supertype" EntitySet="Supertypes" />
+            <End Role="Card" EntitySet="Cards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_R_Card_Color_Card" Association="Self.FK_R_Card_Color_Card">
+            <End Role="Card" EntitySet="Cards" />
+            <End Role="R_Card_Color" EntitySet="R_Card_Color" />
+          </AssociationSet>
+          <AssociationSet Name="FK_R_Card_Mechanic_Card" Association="Self.FK_R_Card_Mechanic_Card">
+            <End Role="Card" EntitySet="Cards" />
+            <End Role="R_Card_Mechanic" EntitySet="R_Card_Mechanic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_R_Card_Color_Color" Association="Self.FK_R_Card_Color_Color">
+            <End Role="Color" EntitySet="Colors" />
+            <End Role="R_Card_Color" EntitySet="R_Card_Color" />
+          </AssociationSet>
+          <AssociationSet Name="FK_R_Card_Mechanic_Mechanics" Association="Self.FK_R_Card_Mechanic_Mechanics">
+            <End Role="Mechanics" EntitySet="Mechanics" />
+            <End Role="R_Card_Mechanic" EntitySet="R_Card_Mechanic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Profile_User" Association="Self.FK_Profile_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Profile" EntitySet="Profiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_R_Auction_CurrentUsers_User" Association="Self.FK_R_Auction_CurrentUsers_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="R_Auction_CurrentUsers" EntitySet="R_Auction_CurrentUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Report_ReportType" Association="Self.FK_Report_ReportType">
+            <End Role="ReportType" EntitySet="ReportTypes" />
+            <End Role="Report" EntitySet="Reports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transaction_User" Association="Self.FK_Transaction_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Transaction" EntitySet="Transactions" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CardTradeModelStoreContainer" CdmEntityContainer="CardTradeEntities">
+          <EntitySetMapping Name="Auctions">
+            <EntityTypeMapping TypeName="CardTradeModel.Auction">
+              <MappingFragment StoreEntitySet="Auction">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idCard" ColumnName="idCard" />
+                <ScalarProperty Name="idUserSeller" ColumnName="idUserSeller" />
+                <ScalarProperty Name="beginDate" ColumnName="beginDate" />
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="currentAmount" ColumnName="currentAmount" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="idCurrentUser" ColumnName="idCurrentUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cards">
+            <EntityTypeMapping TypeName="CardTradeModel.Card">
+              <MappingFragment StoreEntitySet="Card">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="minValue" ColumnName="minValue" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="manaCost" ColumnName="manaCost" />
+                <ScalarProperty Name="power" ColumnName="power" />
+                <ScalarProperty Name="toughness" ColumnName="toughness" />
+                <ScalarProperty Name="isFoil" ColumnName="isFoil" />
+                <ScalarProperty Name="idRarity" ColumnName="idRarity" />
+                <ScalarProperty Name="idCategory" ColumnName="idCategory" />
+                <ScalarProperty Name="idSupertype" ColumnName="idSupertype" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="CardTradeModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Colors">
+            <EntityTypeMapping TypeName="CardTradeModel.Color">
+              <MappingFragment StoreEntitySet="Color">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mechanics">
+            <EntityTypeMapping TypeName="CardTradeModel.Mechanic">
+              <MappingFragment StoreEntitySet="Mechanics">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notifications">
+            <EntityTypeMapping TypeName="CardTradeModel.Notification">
+              <MappingFragment StoreEntitySet="Notification">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idAuction" ColumnName="idAuction" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="CardTradeModel.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="isReviced" ColumnName="isReviced" />
+                <ScalarProperty Name="dateRecived" ColumnName="dateRecived" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="idAuction" ColumnName="idAuction" />
+                <ScalarProperty Name="beginDate" ColumnName="beginDate" />
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+                <ScalarProperty Name="shippingMethod" ColumnName="shippingMethod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profiles">
+            <EntityTypeMapping TypeName="CardTradeModel.Profile">
+              <MappingFragment StoreEntitySet="Profile">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="coins" ColumnName="coins" />
+                <ScalarProperty Name="rating" ColumnName="rating" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="R_Auction_CurrentUsers">
+            <EntityTypeMapping TypeName="CardTradeModel.R_Auction_CurrentUsers">
+              <MappingFragment StoreEntitySet="R_Auction-CurrentUsers">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idCurrentUser" ColumnName="idCurrentUser" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="idAuction" ColumnName="idAuction" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="R_Card_Color">
+            <EntityTypeMapping TypeName="CardTradeModel.R_Card_Color">
+              <MappingFragment StoreEntitySet="R_Card-Color">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idCard" ColumnName="idCard" />
+                <ScalarProperty Name="idColor" ColumnName="idColor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="R_Card_Mechanic">
+            <EntityTypeMapping TypeName="CardTradeModel.R_Card_Mechanic">
+              <MappingFragment StoreEntitySet="R_Card-Mechanic">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idCard" ColumnName="idCard" />
+                <ScalarProperty Name="idMechanic" ColumnName="idMechanic" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rarities">
+            <EntityTypeMapping TypeName="CardTradeModel.Rarity">
+              <MappingFragment StoreEntitySet="Rarity">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reports">
+            <EntityTypeMapping TypeName="CardTradeModel.Report">
+              <MappingFragment StoreEntitySet="Report">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="route" ColumnName="route" />
+                <ScalarProperty Name="idReportType" ColumnName="idReportType" />
+                <ScalarProperty Name="idAuction" ColumnName="idAuction" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReportTypes">
+            <EntityTypeMapping TypeName="CardTradeModel.ReportType">
+              <MappingFragment StoreEntitySet="ReportType">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rules">
+            <EntityTypeMapping TypeName="CardTradeModel.Rule">
+              <MappingFragment StoreEntitySet="Rules">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="type" ColumnName="type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Supertypes">
+            <EntityTypeMapping TypeName="CardTradeModel.Supertype">
+              <MappingFragment StoreEntitySet="Supertype">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transactions">
+            <EntityTypeMapping TypeName="CardTradeModel.Transaction">
+              <MappingFragment StoreEntitySet="Transaction">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="moneyAmount" ColumnName="moneyAmount" />
+                <ScalarProperty Name="coinsAmount" ColumnName="coinsAmount" />
+                <ScalarProperty Name="transactionDate" ColumnName="transactionDate" />
+                <ScalarProperty Name="transactionType" ColumnName="transactionType" />
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="CardTradeModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
